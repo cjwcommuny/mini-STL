@@ -8,14 +8,16 @@
 //#include <iterator>
 
 #include <cstddef>
+#include <memory>
 
 namespace miniSTL {
+
     template <typename T>
     class vector {
     public:
         using sizeT = size_t
 
-        class iterator{
+        class iterator {
 
         };
 
@@ -37,10 +39,10 @@ namespace miniSTL {
 
 
         //access
-        T at();
+        T at(sizeT index);
         T operator[](sizeT index);
-        T front();
-        T back();
+        T &front();
+        T &back();
         T *data(); //return underlining array
 
         //capacity
@@ -74,10 +76,10 @@ namespace miniSTL {
          * non-member function
          */
     private:
+        static const sizeT initDefaultSize;//as init count of constructor
         T *_begin;
         T *_end;//end of the storage
         T *_last;//the position of last element
-        sizeT _size;
     protected:
     };
 }
