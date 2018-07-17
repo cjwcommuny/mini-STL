@@ -51,8 +51,10 @@ namespace miniSTL {
         using difference_type = ptrdiff_t;
         using pointer = T *;
         using reference = T &;
+        using const_reference = const T &;//TODO:check correctness
     };
 
+    //extract the properties of type T by using this class
     template <typename T>
     class iterator_traits<const T *> {
     public:
@@ -64,6 +66,7 @@ namespace miniSTL {
         using const_reference = const T &;//TODO:check correctness
     };
 
+    //reverse iterator is an iterator adapter, to traverse the vector reversely
     template <typename Iterator>
     class reverse_iterator: iterator<
             typename iterator_traits<Iterator>::iterator_category,
@@ -81,7 +84,9 @@ namespace miniSTL {
         using pointer = typename iterator_traits<Iterator>::pointer;
         using reference = typename iterator_traits<Iterator>::reference;
         using const_reference = typename iterator_traits<Iterator>::const_reference;
+        
 
+        //constructor and destructor
         reverse_iterator(): currentIter(nullptr) {};
         explicit reverse_iterator(Iterator i): currentIter(i) {};
         ~reverse_iterator()
@@ -89,11 +94,18 @@ namespace miniSTL {
             currentIter->~value_type();
         }
 
+        //operator overload
         reverse_iterator &operator=(const reverse_iterator<Iterator> &ri);
-        const_reference operator*()
+        reference operator*()
         {
             return *(currentIter - 1);
         }
+        
+        const_reference operator*() const
+        {
+            return *(currentIter - 1);
+        }
+        
         pointer operator->();
         reverse_iterator &operator++();//pre-fix ++
         const reverse_iterator operator++(int);//post-fix ++
@@ -136,6 +148,7 @@ namespace miniSTL {
         }
 
     private:
+        //the inner iterator
         Iterator currentIter;
     protected:
     };
@@ -146,14 +159,7 @@ namespace miniSTL {
         this->currentIter = ri.currentIter;
         return *this;
     }
-
-    /*
-    template <typename iterator>
-    const typename reverse_iterator<iterator>::reference reverse_iterator<iterator>::operator*()
-    {
-        return *(currentIter - 1);
-    }
-*/
+    
     template <typename iterator>
     typename reverse_iterator<iterator>::pointer reverse_iterator<iterator>::operator->()
     {
@@ -223,10 +229,12 @@ namespace miniSTL {
         return *currentIter;
     }
 
-    template<class InputIt, class OutputIt>
+    //copy from [first, last) to the position of d_first
+    template <class InputIt, class OutputIt>
     OutputIt copy( InputIt first, InputIt last, OutputIt d_first)
     {
-        auto source = first, destination = d_first;
+        auto source = first;
+        auto destination = d_first;
         for (; source != last;
              ++source, ++destination) {
             *destination = *source;
