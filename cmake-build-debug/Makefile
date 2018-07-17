@@ -123,33 +123,6 @@ mini_STL/fast:
 	$(MAKE) -f CMakeFiles/mini_STL.dir/build.make CMakeFiles/mini_STL.dir/build
 .PHONY : mini_STL/fast
 
-iterator.o: iterator.cpp.o
-
-.PHONY : iterator.o
-
-# target to build an object file
-iterator.cpp.o:
-	$(MAKE) -f CMakeFiles/mini_STL.dir/build.make CMakeFiles/mini_STL.dir/iterator.cpp.o
-.PHONY : iterator.cpp.o
-
-iterator.i: iterator.cpp.i
-
-.PHONY : iterator.i
-
-# target to preprocess a source file
-iterator.cpp.i:
-	$(MAKE) -f CMakeFiles/mini_STL.dir/build.make CMakeFiles/mini_STL.dir/iterator.cpp.i
-.PHONY : iterator.cpp.i
-
-iterator.s: iterator.cpp.s
-
-.PHONY : iterator.s
-
-# target to generate assembly for a file
-iterator.cpp.s:
-	$(MAKE) -f CMakeFiles/mini_STL.dir/build.make CMakeFiles/mini_STL.dir/iterator.cpp.s
-.PHONY : iterator.cpp.s
-
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -177,32 +150,59 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/mini_STL.dir/build.make CMakeFiles/mini_STL.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-vector.o: vector.cpp.o
+myIterator.o: myIterator.cpp.o
 
-.PHONY : vector.o
+.PHONY : myIterator.o
 
 # target to build an object file
-vector.cpp.o:
-	$(MAKE) -f CMakeFiles/mini_STL.dir/build.make CMakeFiles/mini_STL.dir/vector.cpp.o
-.PHONY : vector.cpp.o
+myIterator.cpp.o:
+	$(MAKE) -f CMakeFiles/mini_STL.dir/build.make CMakeFiles/mini_STL.dir/myIterator.cpp.o
+.PHONY : myIterator.cpp.o
 
-vector.i: vector.cpp.i
+myIterator.i: myIterator.cpp.i
 
-.PHONY : vector.i
+.PHONY : myIterator.i
 
 # target to preprocess a source file
-vector.cpp.i:
-	$(MAKE) -f CMakeFiles/mini_STL.dir/build.make CMakeFiles/mini_STL.dir/vector.cpp.i
-.PHONY : vector.cpp.i
+myIterator.cpp.i:
+	$(MAKE) -f CMakeFiles/mini_STL.dir/build.make CMakeFiles/mini_STL.dir/myIterator.cpp.i
+.PHONY : myIterator.cpp.i
 
-vector.s: vector.cpp.s
+myIterator.s: myIterator.cpp.s
 
-.PHONY : vector.s
+.PHONY : myIterator.s
 
 # target to generate assembly for a file
-vector.cpp.s:
-	$(MAKE) -f CMakeFiles/mini_STL.dir/build.make CMakeFiles/mini_STL.dir/vector.cpp.s
-.PHONY : vector.cpp.s
+myIterator.cpp.s:
+	$(MAKE) -f CMakeFiles/mini_STL.dir/build.make CMakeFiles/mini_STL.dir/myIterator.cpp.s
+.PHONY : myIterator.cpp.s
+
+myVector.o: myVector.cpp.o
+
+.PHONY : myVector.o
+
+# target to build an object file
+myVector.cpp.o:
+	$(MAKE) -f CMakeFiles/mini_STL.dir/build.make CMakeFiles/mini_STL.dir/myVector.cpp.o
+.PHONY : myVector.cpp.o
+
+myVector.i: myVector.cpp.i
+
+.PHONY : myVector.i
+
+# target to preprocess a source file
+myVector.cpp.i:
+	$(MAKE) -f CMakeFiles/mini_STL.dir/build.make CMakeFiles/mini_STL.dir/myVector.cpp.i
+.PHONY : myVector.cpp.i
+
+myVector.s: myVector.cpp.s
+
+.PHONY : myVector.s
+
+# target to generate assembly for a file
+myVector.cpp.s:
+	$(MAKE) -f CMakeFiles/mini_STL.dir/build.make CMakeFiles/mini_STL.dir/myVector.cpp.s
+.PHONY : myVector.cpp.s
 
 # Help Target
 help:
@@ -213,15 +213,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... mini_STL"
-	@echo "... iterator.o"
-	@echo "... iterator.i"
-	@echo "... iterator.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... vector.o"
-	@echo "... vector.i"
-	@echo "... vector.s"
+	@echo "... myIterator.o"
+	@echo "... myIterator.i"
+	@echo "... myIterator.s"
+	@echo "... myVector.o"
+	@echo "... myVector.i"
+	@echo "... myVector.s"
 .PHONY : help
 
 

@@ -82,19 +82,19 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/cjw/workspace/mini-STL/iterator.cpp">
-			<Option target="mini_STL"/>
-		</Unit>
-		<Unit filename="/Users/cjw/workspace/mini-STL/iterator.h">
-			<Option target="mini_STL"/>
-		</Unit>
 		<Unit filename="/Users/cjw/workspace/mini-STL/main.cpp">
 			<Option target="mini_STL"/>
 		</Unit>
-		<Unit filename="/Users/cjw/workspace/mini-STL/vector.cpp">
+		<Unit filename="/Users/cjw/workspace/mini-STL/myIterator.cpp">
 			<Option target="mini_STL"/>
 		</Unit>
-		<Unit filename="/Users/cjw/workspace/mini-STL/vector.h">
+		<Unit filename="/Users/cjw/workspace/mini-STL/myIterator.h">
+			<Option target="mini_STL"/>
+		</Unit>
+		<Unit filename="/Users/cjw/workspace/mini-STL/myVector.cpp">
+			<Option target="mini_STL"/>
+		</Unit>
+		<Unit filename="/Users/cjw/workspace/mini-STL/myVector.h">
 			<Option target="mini_STL"/>
 		</Unit>
 		<Unit filename="/Users/cjw/workspace/mini-STL/CMakeLists.txt">
